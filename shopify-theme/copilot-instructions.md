@@ -1,0 +1,1 @@
+/Users/ana/shopify-learning/Shopify Learning Theme/AGENTS.md
