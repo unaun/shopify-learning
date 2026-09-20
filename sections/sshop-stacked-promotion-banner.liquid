@@ -1,0 +1,365 @@
+{% comment %}
+  Section: Stacked Promotion (tiered discounts)
+  File: sections/stacked-promotion.liquid
+{% endcomment %}
+
+<section class="tiered-discounts" style="
+  --td-bg: {{ section.settings.bg_color }};
+  --td-text: {{ section.settings.text_color }};
+  --td-border: {{ section.settings.border_color }};
+  --td-padding-y: {{ section.settings.padding_vertical }}px;
+">
+  <div class="tiered-discounts__container {% if section.settings.full_width %}td-full{% else %}td-contained{% endif %}">
+    <div class="tiered-discounts__grid td-align-{{ section.settings.text_align }}" role="list" aria-label="{{ section.settings.aria_label | default: 'Stacked promotion' }}">
+      {% for block in section.blocks %}
+        <div class="tiered-discounts__item" role="listitem" {{ block.shopify_attributes }}>
+          {% if section.settings.show_dividers and forloop.index != 1 %}
+            <span class="tiered-discounts__divider" aria-hidden="true"></span>
+          {% endif %}
+
+          <div class="tiered-discounts__value">
+            {{ block.settings.percent | escape }}
+          </div>
+
+          {% if block.settings.caption != blank %}
+            <div class="tiered-discounts__caption">
+              {{ block.settings.caption }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <style>
+    .tiered-discounts {
+      background: var(--td-bg);
+      color: var(--td-text);
+      width: 100%;
+    }
+    .tiered-discounts__container {
+      margin: 0 auto;
+      padding: var(--td-padding-y) 16px;
+      position: relative;
+    }
+    .tiered-discounts__container.td-contained { max-width: {{ section.settings.max_width }}px; }
+
+    /* ---------- Desktop / tablet ---------- */
+    .tiered-discounts__grid {
+      display: grid;
+      grid-template-columns: repeat({{ section.blocks.size | at_least: 1 }}, 1fr);
+      gap: 0;
+      align-items: center;
+      position: relative;
+      border-top: 1px solid var(--td-border);
+      border-bottom: 1px solid var(--td-border);
+      padding: var(--td-padding-y) 0;
+    }
+    .tiered-discounts__item {
+      text-align: center;
+      position: relative;
+      padding: 10px 10px;
+    }
+    /* Vertical divider */
+    .tiered-discounts__divider {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--td-border);
+      display: inline-block;
+    }
+
+    .tiered-discounts__value {
+      font-weight: 700;
+      letter-spacing: .2px;
+      line-height: 1.1;
+      font-size: clamp(16px, 2.2vw, 20px);
+    }
+    .tiered-discounts__caption {
+      margin-top: 2px;
+      opacity: .8;
+      font-size: clamp(11px, 1.6vw, 12px);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .td-align-left { text-align: left; }
+    .td-align-center { text-align: center; }
+    .td-align-right { text-align: right; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 680px) {
+      .tiered-discounts__container {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .tiered-discounts__grid {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat({{ section.blocks.size | at_most: 3 | at_least: 1 }}, 1fr);
+        gap: 0;
+        overflow-x: hidden;
+        border-top: 1px solid var(--td-border);
+        border-bottom: 1px solid var(--td-border);
+        border-left: 0;
+        border-right: 0;
+        padding: var(--td-padding-y) 0;
+      }
+      .tiered-discounts__item {
+        padding: 10px 6px;
+        text-align: center;
+      }
+      .tiered-discounts__divider {
+        left: 0;
+        right: auto;
+        top: 0;
+        height: 100%;
+      }
+      .tiered-discounts__item:nth-child(n+4) {
+        border-top: 1px solid var(--td-border);
+      }
+      .tiered-discounts__value { font-size: 16px; letter-spacing: 0; }
+      .tiered-discounts__caption { font-size: 11px; line-height: 1.2; white-space: normal; }
+    }
+  </style>
+</section>
+
+{%- comment -%}
+  SShop typography controls - added automatically when the section is installed.
+{%- endcomment -%}
+{%- liquid
+  assign sshop_font_source = section.settings.sshop_font_source | default: 'theme'
+  assign sshop_body_font = ''
+  assign sshop_heading_font = ''
+
+  if sshop_font_source == 'custom'
+    assign sshop_body_font = section.settings.sshop_body_font
+    assign sshop_heading_font = section.settings.sshop_heading_font
+  elsif sshop_font_source == 'theme'
+    assign sshop_body_font = settings.type_body_font | default: settings.body_font | default: settings.font_body | default: settings.base_font
+    assign sshop_heading_font = settings.type_header_font | default: settings.type_heading_font | default: settings.heading_font | default: settings.font_heading
+  endif
+
+  if sshop_heading_font == blank
+    assign sshop_heading_font = sshop_body_font
+  endif
+-%}
+{%- if sshop_body_font != blank -%}
+  {%- liquid
+    assign sshop_body_bold = sshop_body_font | font_modify: 'weight', 'bolder'
+    assign sshop_body_italic = sshop_body_font | font_modify: 'style', 'italic'
+    assign sshop_body_bold_italic = sshop_body_bold | font_modify: 'style', 'italic'
+    assign sshop_heading_bold = sshop_heading_font | font_modify: 'weight', 'bolder'
+  -%}
+  <style data-sshop-typography="{{ section.id }}">
+    {{ sshop_body_font | font_face: font_display: 'swap' }}
+    {{ sshop_body_bold | font_face: font_display: 'swap' }}
+    {{ sshop_body_italic | font_face: font_display: 'swap' }}
+    {{ sshop_body_bold_italic | font_face: font_display: 'swap' }}
+    {{ sshop_heading_font | font_face: font_display: 'swap' }}
+    {{ sshop_heading_bold | font_face: font_display: 'swap' }}
+
+    #shopify-section-{{ section.id }} {
+      --sshop-font-body: {{ sshop_body_font.family }}, {{ sshop_body_font.fallback_families }};
+      --sshop-font-heading: {{ sshop_heading_font.family }}, {{ sshop_heading_font.fallback_families }};
+    }
+
+    #shopify-section-{{ section.id }},
+    #shopify-section-{{ section.id }} :where(
+      p, a, span:not([class*="icon"]), li, dt, dd, td, th, caption,
+      label, legend, figcaption, blockquote, cite, q, small, strong, b,
+      em, u, mark, address, time, output, summary, details,
+      div:not([class*="icon"]), button, input, select, textarea, option
+    ) {
+      font-family: var(--sshop-font-body) !important;
+    }
+
+    #shopify-section-{{ section.id }} :where(h1, h2, h3, h4, h5, h6) {
+      font-family: var(--sshop-font-heading) !important;
+    }
+
+    {%- comment -%}
+      A word picked out inside a heading is an em, a strong or a span, which
+      the body rule above also names — at the same specificity. Without this
+      rule, placed after it, the accent word switched to the body font.
+    {%- endcomment -%}
+    #shopify-section-{{ section.id }} :where(h1, h2, h3, h4, h5, h6) :where(*:not([class*="icon"])) {
+      font-family: var(--sshop-font-heading) !important;
+    }
+  </style>
+{%- endif -%}
+{% schema %}
+{
+  "name": "SShop:Stacked Promo",
+  "tag": "section",
+  "class": "section-tiered-discounts sshop-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width (when not full width)",
+      "min": 700,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding (px)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dividers",
+      "label": "Show dividers",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Accessibility label (ARIA)",
+      "default": "Stacked promotion"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border/divider color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "sshop_font_source",
+      "label": "Fonts",
+      "options": [
+        {
+          "value": "theme",
+          "label": "Use my theme fonts"
+        },
+        {
+          "value": "section",
+          "label": "Use this section's original fonts"
+        },
+        {
+          "value": "custom",
+          "label": "Use custom fonts"
+        }
+      ],
+      "default": "theme",
+      "info": "Theme fonts are used by default so this section matches the rest of your store."
+    },
+    {
+      "type": "font_picker",
+      "id": "sshop_heading_font",
+      "label": "Custom heading font",
+      "default": "assistant_n4",
+      "info": "Only applied when \"Use custom fonts\" is selected."
+    },
+    {
+      "type": "font_picker",
+      "id": "sshop_body_font",
+      "label": "Custom body font",
+      "default": "assistant_n4",
+      "info": "Only applied when \"Use custom fonts\" is selected."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Tier",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "percent",
+          "label": "Value (e.g. -10%)",
+          "default": "-10%"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Subtext",
+          "default": "from 2 items purchased"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "SShop:Stacked Promo",
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "percent": "-10%",
+            "caption": "from 2 items purchased"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "percent": "-15%",
+            "caption": "from 3 items purchased"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "percent": "-20%",
+            "caption": "from 4 items purchased"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
