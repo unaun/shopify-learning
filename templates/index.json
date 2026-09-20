@@ -9,54 +9,13 @@
  */
 {
   "sections": {
-    "sshop_stacked_promotion_banner_c6m7Gx": {
-      "type": "sshop-stacked-promotion-banner",
-      "blocks": {
-        "tier_dDn3Vt": {
-          "type": "tier",
-          "settings": {
-            "percent": "-10%",
-            "caption": "from 2 items purchased"
-          }
-        },
-        "tier_RUYm4y": {
-          "type": "tier",
-          "settings": {
-            "percent": "-15%",
-            "caption": "from 3 items purchased"
-          }
-        },
-        "tier_gULaFL": {
-          "type": "tier",
-          "settings": {
-            "percent": "-20%",
-            "caption": "from 4 items purchased"
-          }
-        }
-      },
-      "block_order": [
-        "tier_dDn3Vt",
-        "tier_RUYm4y",
-        "tier_gULaFL"
-      ],
-      "name": "SShop:Stacked Promo",
-      "settings": {
-        "full_width": true,
-        "max_width": 1200,
-        "padding_vertical": 10,
-        "text_align": "center",
-        "show_dividers": true,
-        "aria_label": "Stacked promotion",
-        "bg_color": "#ffffff",
-        "text_color": "#111111",
-        "border_color": "#E5E7EB",
-        "sshop_font_source": "theme",
-        "sshop_heading_font": "assistant_n4",
-        "sshop_body_font": "assistant_n4"
-      }
+    "hello_world_XwPcGF": {
+      "type": "hello-world",
+      "name": "Hello World Template",
+      "settings": {}
     }
   },
   "order": [
-    "sshop_stacked_promotion_banner_c6m7Gx"
+    "hello_world_XwPcGF"
   ]
 }

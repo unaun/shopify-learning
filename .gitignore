@@ -15,3 +15,7 @@ node_modules/
 ## Release files
 release
 *.zip
+
+config/settings_data.json
+.shopifyignore
+
