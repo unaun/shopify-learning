@@ -49,14 +49,20 @@
         "aria_label": "Stacked promotion",
         "bg_color": "#ffffff",
         "text_color": "#111111",
-        "border_color": "#E5E7EB",
+        "border_color": "#e5e7eb",
         "sshop_font_source": "theme",
         "sshop_heading_font": "assistant_n4",
         "sshop_body_font": "assistant_n4"
       }
+    },
+    "hello_world_XwPcGF": {
+      "type": "hello-world",
+      "name": "Hello World Template",
+      "settings": {}
     }
   },
   "order": [
+    "hello_world_XwPcGF",
     "sshop_stacked_promotion_banner_c6m7Gx"
   ]
 }
