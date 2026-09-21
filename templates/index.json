@@ -9,11 +9,6 @@
  */
 {
   "sections": {
-    "hello_world_XwPcGF": {
-      "type": "hello-world",
-      "name": "Hello World Template",
-      "settings": {}
-    },
     "hero_section_WREUXG": {
       "type": "hero-section",
       "blocks": {
@@ -54,10 +49,15 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "hello_world_XwPcGF": {
+      "type": "hello-world",
+      "name": "Hello World Template",
+      "settings": {}
     }
   },
   "order": [
-    "hello_world_XwPcGF",
-    "hero_section_WREUXG"
+    "hero_section_WREUXG",
+    "hello_world_XwPcGF"
   ]
 }
