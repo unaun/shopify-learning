@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Skeleton",
+    "theme_name": "Simple",
     "theme_version": "0.1.0",
-    "theme_author": "Shopify",
+    "theme_author": "AUN",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -23,7 +23,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "label": ":general.heading",
+        "label": "t:general.heading",
         "default": "sofia_sans_condensed_n4"
       }
     ]
