@@ -13,9 +13,51 @@
       "type": "hello-world",
       "name": "Hello World Template",
       "settings": {}
+    },
+    "hero_section_WREUXG": {
+      "type": "hero-section",
+      "blocks": {
+        "text_block_BHqJgk": {
+          "type": "text_block",
+          "settings": {
+            "block_title": "Block title",
+            "block_text": "<p>Add any text here</p>",
+            "text_alignment": "center"
+          }
+        },
+        "text_block_U7KRJM": {
+          "type": "text_block",
+          "settings": {
+            "block_title": "Block title",
+            "block_text": "<p>Add any text here</p>",
+            "text_alignment": "center"
+          }
+        },
+        "text_block_whPrEb": {
+          "type": "text_block",
+          "settings": {
+            "block_title": "Block title",
+            "block_text": "<p>Add any text here</p>",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_BHqJgk",
+        "text_block_U7KRJM",
+        "text_block_whPrEb"
+      ],
+      "name": "Header and 3 text blocks",
+      "settings": {
+        "main_heading": "Big sale",
+        "heading_alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
-    "hello_world_XwPcGF"
+    "hello_world_XwPcGF",
+    "hero_section_WREUXG"
   ]
 }
