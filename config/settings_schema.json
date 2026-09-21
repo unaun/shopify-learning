@@ -17,8 +17,14 @@
       {
         "type": "font_picker",
         "id": "type_primary_font",
-        "default": "work_sans_n4",
+        "default": "sofia_sans_n3",
         "label": "t:general.primary"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": ":general.heading",
+        "default": "sofia_sans_condensed_n4"
       }
     ]
   },
