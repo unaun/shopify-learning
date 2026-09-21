@@ -16,7 +16,7 @@
 
     {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
 
-    {{ 'theme.js' | asset_url | script_tag }}
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
   </head>
 
   <body>

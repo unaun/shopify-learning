@@ -1,3 +1,12 @@
+body {
+  background-image: url(/assets/new-bg.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
 .site__header {
   width: 100vw !important;
   position: relative !important;
@@ -9,11 +18,31 @@
   line-height: 40px;
   color: white;
   text-align: center;
-  background: #2a7b9b;
+  background: #025c4e;
   background: linear-gradient(
     90deg,
-    rgba(42, 123, 155, 1) 0%,
+    rgba(2, 92, 78, 1) 0%,
     rgba(87, 199, 133, 1) 50%,
-    rgba(237, 221, 83, 1) 100%
+    rgba(1, 117, 78, 1) 100%
   );
+}
+
+.header__wrapper:hover {
+  background: #ffffff;
+}
+.header__wrapper:hover * {
+  color: #333333;
+}
+.header__wrapper * {
+  color: #ffffff;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  margin-left: calc(var(--page-margin) * 2);
+  margin-right: calc(var(--page-margin) * 2);
+}
+.header__icons {
+  display: flex;
+  justify-content: end;
 }
