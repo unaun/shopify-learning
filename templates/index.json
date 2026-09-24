@@ -82,7 +82,7 @@
                     "mobile_content_padding": 24,
                     "title_size": 36,
                     "description_size": 16,
-                    "overlay_opacity": 55,
+                    "overlay_opacity": 0,
                     "corner_radius": 12,
                     "text_color": "#FFFFFF",
                     "fallback_color": "#333333"
@@ -115,7 +115,7 @@
                     "mobile_content_padding": 24,
                     "title_size": 36,
                     "description_size": 16,
-                    "overlay_opacity": 55,
+                    "overlay_opacity": 0,
                     "corner_radius": 12,
                     "text_color": "#FFFFFF",
                     "fallback_color": "#333333"
