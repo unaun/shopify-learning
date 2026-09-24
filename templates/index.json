@@ -58,7 +58,7 @@
           "name": "t:general.row",
           "settings": {
             "layout_direction": "group--horizontal",
-            "alignment": "flex-start",
+            "alignment": "center",
             "padding": 0
           },
           "blocks": {
@@ -84,7 +84,7 @@
                     "description_size": 16,
                     "overlay_opacity": 0,
                     "corner_radius": 12,
-                    "text_color": "#FFFFFF",
+                    "text_color": "#ffffff",
                     "fallback_color": "#333333"
                   },
                   "blocks": {}
@@ -117,7 +117,7 @@
                     "description_size": 16,
                     "overlay_opacity": 0,
                     "corner_radius": 12,
-                    "text_color": "#FFFFFF",
+                    "text_color": "#ffffff",
                     "fallback_color": "#333333"
                   },
                   "blocks": {}
