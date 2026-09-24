@@ -50,14 +50,99 @@
         "padding_bottom": 40
       }
     },
-    "hello_world_XwPcGF": {
-      "type": "hello-world",
-      "name": "Hello World Template",
+    "custom_section_WYBW9n": {
+      "type": "custom-section",
+      "blocks": {
+        "group_6gVr3a": {
+          "type": "group",
+          "name": "t:general.row",
+          "settings": {
+            "layout_direction": "group--horizontal",
+            "alignment": "flex-start",
+            "padding": 0
+          },
+          "blocks": {
+            "group_nJhkAU": {
+              "type": "group",
+              "name": "t:general.column",
+              "settings": {
+                "layout_direction": "group--horizontal",
+                "alignment": "center",
+                "padding": 16
+              },
+              "blocks": {
+                "ai_gen_block_d9297a0_P69QQE": {
+                  "type": "ai_gen_block_d9297a0",
+                  "settings": {
+                    "category": "mens-sale",
+                    "desktop_width_percent": 100,
+                    "card_height": 420,
+                    "mobile_card_height": 320,
+                    "content_padding": 32,
+                    "mobile_content_padding": 24,
+                    "title_size": 36,
+                    "description_size": 16,
+                    "overlay_opacity": 55,
+                    "corner_radius": 12,
+                    "text_color": "#FFFFFF",
+                    "fallback_color": "#333333"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "ai_gen_block_d9297a0_P69QQE"
+              ]
+            },
+            "group_j9YgtA": {
+              "type": "group",
+              "name": "t:general.column",
+              "settings": {
+                "layout_direction": "group--horizontal",
+                "alignment": "center",
+                "padding": 16
+              },
+              "blocks": {
+                "ai_gen_block_d9297a0_JcNihh": {
+                  "type": "ai_gen_block_d9297a0",
+                  "name": "Category image card",
+                  "settings": {
+                    "category": "womens-sale",
+                    "desktop_width_percent": 100,
+                    "card_height": 420,
+                    "mobile_card_height": 320,
+                    "content_padding": 32,
+                    "mobile_content_padding": 24,
+                    "title_size": 36,
+                    "description_size": 16,
+                    "overlay_opacity": 55,
+                    "corner_radius": 12,
+                    "text_color": "#FFFFFF",
+                    "fallback_color": "#333333"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "ai_gen_block_d9297a0_JcNihh"
+              ]
+            }
+          },
+          "block_order": [
+            "group_nJhkAU",
+            "group_j9YgtA"
+          ]
+        }
+      },
+      "block_order": [
+        "group_6gVr3a"
+      ],
+      "name": "t:general.custom_section",
       "settings": {}
     }
   },
   "order": [
     "hero_section_WREUXG",
-    "hello_world_XwPcGF"
+    "custom_section_WYBW9n"
   ]
 }
