@@ -1,0 +1,95 @@
+{% doc %}
+  @prompt
+    a centred row with 2 columns, columns are horizontally oriented for large screen and vertically for small screens, the max gap between blocks inside is 40px
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-two-column-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin-inline: auto;
+    color: #333333;
+  }
+
+  .ai-two-column-{{ ai_gen_id }}__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: min({{ block.settings.column_gap }}px, 40px);
+    width: 100%;
+  }
+
+  .ai-two-column-{{ ai_gen_id }}__column {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-two-column-{{ ai_gen_id }}__row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .ai-two-column-{{ ai_gen_id }}__column {
+      width: 100%;
+      flex-basis: auto;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-two-column-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-two-column-{{ ai_gen_id }}__row">
+    <div class="ai-two-column-{{ ai_gen_id }}__column">{{ block.settings.column_one }}</div>
+    <div class="ai-two-column-{{ ai_gen_id }}__column">{{ block.settings.column_two }}</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Centered two columns",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "column_one",
+      "label": "First column",
+      "default": "<p>Add content for the first column.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "column_two",
+      "label": "Second column",
+      "default": "<p>Add content for the second column.</p>"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Centered two columns"
+    }
+  ],
+  "tag": null,
+  "class": "centered-two-columns"
+}
+{% endschema %}
