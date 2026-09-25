@@ -12,42 +12,24 @@
     "hero_section_WREUXG": {
       "type": "hero-section",
       "blocks": {
-        "text_block_BHqJgk": {
-          "type": "text_block",
-          "settings": {
-            "block_title": "Block title",
-            "block_text": "<p>Add any text here</p>",
-            "text_alignment": "center"
-          }
-        },
-        "text_block_U7KRJM": {
-          "type": "text_block",
-          "settings": {
-            "block_title": "Block title",
-            "block_text": "<p>Add any text here</p>",
-            "text_alignment": "center"
-          }
-        },
         "text_block_whPrEb": {
           "type": "text_block",
           "settings": {
-            "block_title": "Block title",
-            "block_text": "<p>Add any text here</p>",
+            "block_title": "Freshen up your gym fits with up to 50% off* Last Chance styles.",
+            "block_text": "<p>*selected lines only</p>",
             "text_alignment": "center"
           }
         }
       },
       "block_order": [
-        "text_block_BHqJgk",
-        "text_block_U7KRJM",
         "text_block_whPrEb"
       ],
       "name": "Header and 3 text blocks",
       "settings": {
-        "main_heading": "Big sale",
+        "main_heading": "UP TO 50% OFF*",
         "heading_alignment": "center",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 60
       }
     },
     "custom_section_WYBW9n": {
