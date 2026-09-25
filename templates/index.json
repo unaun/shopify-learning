@@ -185,12 +185,43 @@
         "ai_gen_block_74c22b8_JYFKgh"
       ],
       "settings": {}
+    },
+    "1790339697683de931": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bb906d8_Hbd9ap": {
+          "type": "ai_gen_block_bb906d8",
+          "settings": {
+            "heading": "Men's Sale",
+            "heading_size": 28,
+            "columns_desktop": "4",
+            "columns_mobile": "2",
+            "gap": 16,
+            "price_prefix": "Price from",
+            "product_1": "mens-couriers-blizzard-light-grey",
+            "product_2": "mens-couriers-blizzard-light-grey",
+            "product_3": "mens-cruiser-slip-on-corduroy-stony-cream",
+            "product_4": "mens-cruiser-slip-on-corduroy",
+            "product_5": "",
+            "product_6": "",
+            "product_7": "",
+            "product_8": "",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bb906d8_Hbd9ap"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero_section_WREUXG",
     "custom_section_WYBW9n",
     "1790315237bf27f312",
-    "1790339107fb5fa21c"
+    "1790339107fb5fa21c",
+    "1790339697683de931"
   ]
 }
