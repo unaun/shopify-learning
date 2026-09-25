@@ -121,10 +121,45 @@
       ],
       "name": "t:general.custom_section",
       "settings": {}
+    },
+    "1790315237bf27f312": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_28870ce_ggx89U": {
+          "type": "ai_gen_block_28870ce",
+          "settings": {
+            "collection_1": "mens-slip-ons",
+            "price_label_1": "Price from $13",
+            "collection_2": "",
+            "price_label_2": "Price from",
+            "collection_3": "",
+            "price_label_3": "Price from",
+            "collection_4": "",
+            "price_label_4": "Price from",
+            "desktop_width_percent": 100,
+            "gap": 16,
+            "card_padding": 16,
+            "corner_radius": 8,
+            "title_size": 20,
+            "price_size": 16,
+            "text_color": "#333333",
+            "card_background": "#FFFFFF"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_28870ce_ggx89U"
+      ],
+      "custom_css": [
+        ".custom-section__content {margin-top: 40px;}"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero_section_WREUXG",
-    "custom_section_WYBW9n"
+    "custom_section_WYBW9n",
+    "1790315237bf27f312"
   ]
 }
