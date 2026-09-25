@@ -153,11 +153,44 @@
       ],
       "custom_css": [],
       "settings": {}
+    },
+    "1790339107fb5fa21c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_74c22b8_JYFKgh": {
+          "type": "ai_gen_block_74c22b8",
+          "settings": {
+            "collections": [
+              "mens-sale",
+              "womens-sale",
+              "mens-slip-ons"
+            ],
+            "desktop_width_percent": 100,
+            "columns_desktop": 3,
+            "columns_mobile": "2",
+            "price_prefix": "Price from",
+            "no_products_text": "See collection",
+            "card_color": "#FFFFFF",
+            "text_color": "#333333",
+            "title_size": 20,
+            "price_size": 16,
+            "card_gap": 16,
+            "content_padding": 16,
+            "corner_radius": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_74c22b8_JYFKgh"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero_section_WREUXG",
     "custom_section_WYBW9n",
-    "1790315237bf27f312"
+    "1790315237bf27f312",
+    "1790339107fb5fa21c"
   ]
 }
